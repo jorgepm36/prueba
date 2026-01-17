@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "1c8b22ae-2f9b-48b0-b94c-11057fd5b9ed",
+		"name": "prueba",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "clientes/listar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/clientes/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "clientes/guardar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"clienteid\": 1,\n    \"contrasenia\": \"1234\",\n    \"estado\": \"ACTIVO\",\n    \"nombre\": \"JOSE LEMA\",\n    \"genero\": \"\",\n    \"edad\": 0,\n    \"identificacion\": \"1234567890\",\n    \"direccion\": \"OTAVALO SN Y PRINCIPAL\",\n    \"telefono\": \"098254785\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/clientes/guardar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"guardar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/clientes/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/clientes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"clienteid\": 1,\n    \"contrasenia\": \"1234\",\n    \"estado\": \"ACTIVO\",\n    \"nombre\": \"JOSE LEMA\",\n    \"genero\": \"\",\n    \"edad\": 0,\n    \"identificacion\": \"1234567890\",\n    \"direccion\": \"OTAVALO SN Y PRINCIPAL\",\n    \"telefono\": \"098254785\",\n    \"cuenta\": {\n        \"idCliente\": 2,\n        \"numeroCuenta\": \"475896\",\n        \"tipoCuenta\": \"AHORROS\",\n        \"saldoInicial\": 200,\n        \"estado\": \"ACTIVO\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/clientes/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

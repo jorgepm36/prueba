@@ -1,0 +1,109 @@
+<h2>Editar Cliente</h2>
+<div *ngIf="respuesta">
+    <div [ngClass]="{'success' : respuesta.estado === 'OK', 'error' : respuesta.estado === 'ERROR' }">
+{{ respuesta.mensaje }}
+    </div>
+</div>
+<form (ngSubmit)="guardarCliente()" autocomplete="off">
+    <table>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <label>ClienteID:</label>
+                        </td>
+                        <td>
+                            <input type="text" [(ngModel)]="cliente.clienteid" name="clienteid" required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Identificacion:</label>
+                        </td>
+                        <td>
+                            <input type="text" [(ngModel)]="cliente.identificacion" name="identificacion" required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Nombre:</label>
+                        </td>
+                        <td>
+                            <input class="mayusculas" type="text" [(ngModel)]="cliente.nombre" name="nombre" required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Genero:</label>
+                        </td>
+                        <td>
+                            <select name="genero" [(ngModel)]="cliente.genero" >
+                                <option value="">seleccione</option>
+                                <option value="FEMENINO">FEMENINO</option>
+                                <option value="MASCULINO">MASCULINO</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>edad:</label>
+                        </td>
+                        <td>
+                            <input type="number" [(ngModel)]="cliente.edad" name="edad" required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>direccion:</label>
+                        </td>
+                        <td>
+                            <input class="mayusculas" type="text" [(ngModel)]="cliente.direccion" name="direccion"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>telefono:</label>
+                        </td>
+                        <td>
+                            <input type="text" [(ngModel)]="cliente.telefono" name="telefono"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>contrasenia:</label>
+                        </td>
+                        <td>
+                            <input type="password" [(ngModel)]="cliente.contrasenia" name="contrasenia" required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>estado:</label>
+                        </td>
+                        <td>
+                            <select name="estado" [(ngModel)]="cliente.estado" required>
+                                <option value="">seleccione</option>
+                                <option value="ACTIVO">ACTIVO</option>
+                                <option value="INACTIVO">INACTIVO</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <app-editar-cuenta *ngIf="cliente.id && cliente.id != null && cliente.id > 0"
+                    [idCliente]="cliente.id" (cuentaCambiada)="cuenta = $event">
+                </app-editar-cuenta>
+                
+            </td>
+        </tr>
+    </table>
+  
+    <div class="btns-footer">
+        <button class="btn-guardar" type="submit">Guardar</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;  
+        <button class="btn-cancelar" type="button" (click)="cancelar()">Cancelar</button>
+    </div>
+
+</form>

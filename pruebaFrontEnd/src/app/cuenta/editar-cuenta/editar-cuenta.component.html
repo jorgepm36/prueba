@@ -1,0 +1,59 @@
+<table>
+    <tr>
+        <td colspan="2">
+            <h2>DATOS DE LA CUENTA</h2>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>N&uacute;mero de cuenta:</label>
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="cuenta.numeroCuenta" name="numeroCuenta" required 
+            (ngModelChange)="onCambioCuenta(cuenta)"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Saldo inicial:</label>
+        </td>
+        <td>
+            <input type="number" step="any" [(ngModel)]="cuenta.saldoInicial" name="saldoInicial" required 
+            (ngModelChange)="onCambioCuenta(cuenta)"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Tipo de cuenta:</label>
+        </td>
+        <td>
+            <select name="tipoCuenta" [(ngModel)]="cuenta.tipoCuenta" required
+            (ngModelChange)="onCambioCuenta(cuenta)">
+                <option value="">seleccione</option>
+                <option value="AHORROS">AHORROS</option>
+                <option value="CORRIENTE">CORRIENTE</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>estado:</label>
+        </td>
+        <td>
+            <select name="estado" [(ngModel)]="cuenta.estado" required
+            (ngModelChange)="onCambioCuenta(cuenta)">
+                <option value="">seleccione</option>
+                <option value="ACTIVO">ACTIVO</option>
+                <option value="INACTIVO">INACTIVO</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>idCliente hidden</label>
+        </td>
+        <td>
+            <input type="number" [value]="idCliente" readonly />
+        </td>
+    </tr>
+</table>

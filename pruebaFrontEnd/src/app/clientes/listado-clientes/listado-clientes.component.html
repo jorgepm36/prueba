@@ -1,0 +1,45 @@
+<h2 style="display: inline;">Lista de Clientes</h2>
+<div style="display: inline; float: right;">
+    <button class="btn-nuevo" (click)="nuevoCliente()">Nuevo Cliente</button>
+</div>
+<div>
+    <label for="">Filtrar: &nbsp;</label>
+    <input type="text" [(ngModel)]="filtroNombre" placeholder="Filtrar por..." />
+</div>
+<br/>
+<div *ngIf="respuesta">
+    <div [ngClass]="{'success' : respuesta.estado === 'OK', 'error' : respuesta.estado === 'ERROR' }">
+{{ respuesta.mensaje }}
+    </div>
+</div>
+
+<table style="width: 100%;">
+    <thead>
+        <tr>
+            <th>CLIENTEID</th>
+            <th>IDENTIFICACION</th>
+            <th>NOMBRE</th>
+            <th>GENERO</th>
+            <th>EDAD</th>
+            <th>ESTADO</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cliente of clientes | filter:filtroNombre" id="{{ cliente.id }}">
+            <td>{{ cliente.clienteid }}</td>
+            <td>{{ cliente.identificacion }}</td>
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.genero }}</td>
+            <td>{{ cliente.edad }}</td>
+            <td>{{ cliente.estado }}</td>
+            <td>
+                <button class="btn-editar" type="button" (click)="editarCliente(cliente)">Editar</button>
+            </td>
+            <td>
+                <button class="btn-eliminar" type="button" (click)="eliminarCliente(cliente)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

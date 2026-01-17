@@ -1,0 +1,29 @@
+.mayusculas{
+    text-transform: uppercase;
+}
+
+.success{
+    background-color: green;
+    color: white;
+}
+
+.error{
+    background-color: red;
+    color: white;
+}
+
+.btn-guardar{
+    background-color: green;
+    color: white;
+    height: 28px;
+}
+
+.btn-cancelar{
+    background-color: #e0e0e0;
+    color: black;
+}
+
+.btns-footer{
+    margin-left: 50px;
+    margin-top: 20px;
+}

@@ -1,0 +1,15 @@
+# Directorios generados por Angular
+pruebaFrontEnd/dist/
+pruebaFrontEnd/out-tsc/
+pruebaFrontEnd/angular/
+pruebaFrontEnd/.angular/
+
+pruebaFrontEnd/.editorconfig
+pruebaFrontEnd/.vscode/extensions.json
+pruebaFrontEnd/.vscode/launch.json
+pruebaFrontEnd/.vscode/tasks.json
+
+
+# Node.js
+pruebaFrontEnd/node_modules/
+

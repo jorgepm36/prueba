@@ -18,6 +18,15 @@ public class ClienteDTO extends PersonaDTO {
 
     //esto se utiliza solamente para demostrar la transacionalidad en el sevicio
     private CuentaDTO cuenta;
+
+    public ClienteDTO() {
+    }
+
+    public ClienteDTO(long clienteid) {
+        this.clienteid = clienteid;
+    }
+    
+    
     
     public long getClienteid() {
         return clienteid;
